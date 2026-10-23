@@ -180,12 +180,12 @@ export const invitation = {
         name: "Thirumathi. E. Sankari (alias Sasikala)",
         relation: "Mother",
       },
-      brother: [
-        { name: "Saravana Kumar E", relation: "Brother" },
-      ],
       grandparents: [
         { name: "Thiru. R. Ramadoss", relation: "Grandfather" },
         { name: "Thirumathi. R. Kasthuri", relation: "Grandmother" },
+      ],
+      brother: [
+        { name: "Saravana Kumar E", relation: "Brother" },
       ],
       contacts: [],
     } as FamilyGroupData,
@@ -199,12 +199,12 @@ export const invitation = {
         name: "திருமதி. E. சங்கரி (எ) சசிகலா",
         relation: "தாய்",
       },
-      brother: [
-        { name: "சரவண குமார் E", relation: "சகோதரர்" },
-      ],
       grandparents: [
         { name: "திரு. R. ராமதாஸ்", relation: "தாத்தா" },
         { name: "திருமதி. R. கஸ்தூரி", relation: "பாட்டி" },
+      ],
+      brother: [
+        { name: "சரவண குமார் E", relation: "சகோதரர்" },
       ],
       contacts: [],
     } as FamilyGroupData,
@@ -304,6 +304,7 @@ Your esteemed presence, heartfelt prayers and affectionate blessings will make t
       countdownTitle: "Counting Down to the Sacred Muhurtham",
       openSealText: "OPEN INVITATION",
       openSealSub: "Touch to enter",
+      tapHere: "Tap Here to Open",
       quote: "Two souls, one sacred journey. A divine bond blessed by the Almighty and our beloved families.",
       showerFlowers: "Shower Flowers on Couple 🌸",
       showerFlowersSub: "Click to shower sacred petals and blessings",
@@ -323,6 +324,7 @@ Your esteemed presence, heartfelt prayers and affectionate blessings will make t
       countdownTitle: "சுபமுகூர்த்த வைபவத்திற்கு இன்னும்...",
       openSealText: "பத்திரிகையை திறக்க",
       openSealSub: "திறக்க தொடவும்",
+      tapHere: "திறக்க இங்கே தொடவும்",
       quote: "இரு மனங்கள் இணையும் புனிதப் பயணம் • இறைவனும் பெரியோர்களும் ஆசீர்வதிக்கும் தெய்வீக பந்தம்.",
       showerFlowers: "மணமக்களை மலர் தூவி வாழ்த்துக 🌸",
       showerFlowersSub: "அட்சதை மற்றும் மலர் தூவி ஆசீர்வதிக்கவும்",

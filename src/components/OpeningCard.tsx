@@ -75,42 +75,6 @@ function FloatingMandapamPetals() {
   );
 }
 
-/* ── Lord Ganesha Sacred Emblem ── */
-function GaneshaEmblem() {
-  return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.35rem' }}>
-      <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="20" fill="url(#ghalo)" opacity="0.45" />
-        <path d="M24 6 L28 14 L20 14 Z" fill="url(#goldGrad)" stroke="#B8860B" strokeWidth="0.8" />
-        <circle cx="24" cy="5" r="1.5" fill="#FFE599" />
-        <path d="M19 14 C19 14 24 16 29 14" stroke="#B8860B" strokeWidth="1.2" fill="none" />
-        <line x1="24" y1="13" x2="24" y2="19" stroke="#900C3F" strokeWidth="1.4" strokeLinecap="round" />
-        <circle cx="24" cy="20" r="1.2" fill="#D4AF37" />
-        <path d="M18 17 C12 17 11 25 17 27" stroke="#B8860B" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <path d="M30 17 C36 17 37 25 31 27" stroke="#B8860B" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <path
-          d="M23 18 C23 25 24 28 26 31 C28 34 31 34 31 31 C31 29 29 29 29 30"
-          stroke="#B8860B"
-          strokeWidth="2"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <circle cx="31" cy="29" r="2.2" fill="#FFE082" stroke="#B8860B" strokeWidth="0.8" />
-        <defs>
-          <radialGradient id="ghalo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ECC875" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#ECC875" stopOpacity="0" />
-          </radialGradient>
-          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFF2BD" />
-            <stop offset="50%" stopColor="#D4AF37" />
-            <stop offset="100%" stopColor="#996515" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-}
 
 /* ── Royal Scalloped Wax Seal ── */
 function RoyalWaxSeal({ onClick, breaking, isTamil }: { onClick: () => void; breaking: boolean; isTamil: boolean }) {
@@ -149,6 +113,25 @@ function RoyalWaxSeal({ onClick, breaking, isTamil }: { onClick: () => void; bre
       }}
       aria-label="Open Invitation Seal"
     >
+      {/* Subtle pulsing aura halo ring */}
+      <motion.div
+        animate={{
+          scale: [1, 1.22, 1],
+          opacity: [0.55, 0, 0.55],
+        }}
+        transition={{
+          duration: 2.2,
+          repeat: Infinity,
+          ease: 'easeOut',
+        }}
+        style={{
+          position: 'absolute',
+          inset: -6,
+          borderRadius: '50%',
+          border: '1.5px solid #D4AF37',
+          pointerEvents: 'none',
+        }}
+      />
       <svg
         width="80"
         height="80"
@@ -582,8 +565,6 @@ export default function OpeningCard({ onOpen }: Props) {
                 padding: '0.5rem 1rem',
               }}
             >
-              <GaneshaEmblem />
-
               <p
                 style={{
                   fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', sans-serif",
@@ -595,7 +576,7 @@ export default function OpeningCard({ onOpen }: Props) {
                   fontWeight: 600,
                 }}
               >
-                {isTamil ? 'ஓம் ஸ்ரீ விநாயகர் துணை' : 'Nichayathartham • Sacred Engagement'}
+                {isTamil ? 'நிச்சயதார்த்த சுபமுகூர்த்த அழைப்பிதழ்' : 'Nichayathartham • Sacred Engagement'}
               </p>
 
               {/* Grand Arched Portrait Frame — SIGNIFICANTLY LARGER & CLEAR */}
@@ -911,28 +892,12 @@ export default function OpeningCard({ onOpen }: Props) {
              MOBILE VIEW: Large, Clear, Prominent Couple Photo at Center
              ══════════════════════════════════════════════════════════════ */
           <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', width: '100%' }}>
-            <GaneshaEmblem />
-
-            <p
-              style={{
-                fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', sans-serif",
-                fontSize: isTamil ? '0.72rem' : '0.58rem',
-                letterSpacing: isTamil ? '0.06em' : '0.24em',
-                textTransform: 'uppercase',
-                color: '#8A7660',
-                margin: '0 0 0.25rem',
-                fontWeight: 600,
-              }}
-            >
-              {isTamil ? 'ஓம் ஸ்ரீ விநாயகர் துணை' : 'You are cordially invited to the'}
-            </p>
-
             <h1
               style={{
                 fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', 'Playfair Display', serif",
                 fontSize: isTamil ? 'clamp(1.18rem, 4vw, 1.45rem)' : 'clamp(1.22rem, 4.2vw, 1.6rem)',
                 color: '#7A1C24',
-                margin: '0 0 0.6rem',
+                margin: '0 0 0.5rem',
                 fontWeight: 700,
                 letterSpacing: isTamil ? '0.02em' : '0.12em',
                 textTransform: isTamil ? 'none' : 'uppercase',
@@ -1123,8 +1088,72 @@ export default function OpeningCard({ onOpen }: Props) {
               </p>
             </div>
 
-            {/* Interactive Wax Seal */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', margin: '0.4rem 0' }}>
+            {/* Interactive Wax Seal & Tap Here Indication for Mobile View */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', margin: '0.4rem 0 0.1rem' }}>
+              {/* Prominent "Tap Here to Open" Indication Badge */}
+              <motion.button
+                type="button"
+                id="btn-tap-here-indication"
+                onClick={triggerOpening}
+                animate={{
+                  y: [0, -4, 0],
+                  scale: [1, 1.03, 1],
+                  boxShadow: [
+                    '0 4px 14px rgba(122, 28, 36, 0.3), 0 0 0 0 rgba(212, 175, 55, 0)',
+                    '0 6px 20px rgba(122, 28, 36, 0.45), 0 0 12px rgba(212, 175, 55, 0.5)',
+                    '0 4px 14px rgba(122, 28, 36, 0.3), 0 0 0 0 rgba(212, 175, 55, 0)',
+                  ],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                whileHover={{ scale: 1.06 }}
+                whileTap={{ scale: 0.94 }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  padding: '0.42rem 1.15rem',
+                  borderRadius: 9999,
+                  background: 'linear-gradient(135deg, #7A1C24 0%, #941F28 50%, #680E16 100%)',
+                  border: '1.4px solid #F5D061',
+                  color: '#FFFDF8',
+                  cursor: 'pointer',
+                  marginBottom: '0.2rem',
+                }}
+                aria-label="Tap here to open invitation"
+              >
+                <motion.span
+                  animate={{ y: [0, 2, 0] }}
+                  transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ fontSize: '0.95rem', display: 'inline-block' }}
+                >
+                  👇
+                </motion.span>
+                <span
+                  style={{
+                    fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', sans-serif",
+                    fontSize: isTamil ? '0.8rem' : '0.72rem',
+                    fontWeight: 700,
+                    letterSpacing: isTamil ? '0.04em' : '0.14em',
+                    textTransform: isTamil ? 'none' : 'uppercase',
+                    color: '#FFEAA7',
+                    textShadow: '0 1px 3px rgba(0,0,0,0.6)',
+                  }}
+                >
+                  {invitation.texts[language].tapHere}
+                </span>
+                <motion.span
+                  animate={{ y: [0, 2, 0] }}
+                  transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ fontSize: '0.95rem', display: 'inline-block' }}
+                >
+                  👇
+                </motion.span>
+              </motion.button>
+
               <RoyalWaxSeal onClick={triggerOpening} breaking={phase === 'breaking'} isTamil={isTamil} />
               <span
                 style={{

@@ -418,3 +418,73 @@ body {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   📅 CEREMONY TIMELINE RESPONSIVE STYLES
+   Fixes time alignment on mobile to prevent layering with line
+   ═══════════════════════════════════════════════════════════ */
+.timeline-gold-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #E8DFD2;
+}
+
+@media (max-width: 640px) {
+  .timeline-gold-line {
+    left: 16px;
+    margin-left: 0;
+  }
+  .timeline-item-row {
+    display: flex;
+    gap: 0.95rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 9px;
+  }
+  .timeline-time-desktop {
+    display: none !important;
+  }
+  .timeline-time-mobile {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.22rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.38);
+    margin-bottom: 0.55rem;
+  }
+  .timeline-node-dot {
+    margin-top: 6px;
+  }
+}
+
+@media (min-width: 641px) {
+  .timeline-gold-line {
+    left: 110px;
+    margin-left: calc(1.5rem + 6px);
+  }
+  .timeline-item-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+    position: relative;
+  }
+  .timeline-time-desktop {
+    display: block !important;
+    width: 110px;
+    text-align: right;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .timeline-time-mobile {
+    display: none !important;
+  }
+  .timeline-node-dot {
+    margin-top: 4px;
+  }
+}

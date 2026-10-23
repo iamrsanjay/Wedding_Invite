@@ -14,15 +14,11 @@ function TimelineNode({ item, index, isTamil }: { item: CeremonyTimelineItem; in
       ref={ref}
       initial={{ opacity: 0, x: -30 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-      transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      style={{
-        display: 'flex', gap: 'clamp(1.2rem, 3.5vw, 2.2rem)',
-        marginBottom: '3rem',
-        alignItems: 'flex-start', position: 'relative',
-      }}
+      transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.36, 1] }}
+      className="timeline-item-row"
     >
-      {/* Time block */}
-      <div style={{ minWidth: 'clamp(70px, 16%, 95px)', textAlign: 'right', flexShrink: 0, paddingTop: 2 }}>
+      {/* Desktop Time Column */}
+      <div className="timeline-time-desktop">
         <p style={{
           fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', 'Cormorant Garamond', serif",
           fontSize: isTamil ? '0.88rem' : 'clamp(0.95rem, 2.5vw, 1.1rem)',
@@ -35,7 +31,7 @@ function TimelineNode({ item, index, isTamil }: { item: CeremonyTimelineItem; in
       </div>
 
       {/* Dot with pulse ring */}
-      <div style={{ position: 'relative', flexShrink: 0, zIndex: 2, marginTop: 4 }}>
+      <div className="timeline-node-dot" style={{ position: 'relative', flexShrink: 0, zIndex: 2 }}>
         <motion.div
           animate={inView ? { scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] } : {}}
           transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.4 }}
@@ -69,6 +65,20 @@ function TimelineNode({ item, index, isTamil }: { item: CeremonyTimelineItem; in
           position: 'absolute', left: 0, top: 0, bottom: 0, width: 3,
           background: 'linear-gradient(to bottom, #D4AF37, #A88245)',
         }} />
+
+        {/* Mobile-Only Time Badge above Event Title */}
+        <div className="timeline-time-mobile">
+          <span style={{ fontSize: '0.85rem' }}>⏱️</span>
+          <span style={{
+            fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', 'Cormorant Garamond', serif",
+            fontWeight: 700,
+            fontSize: isTamil ? '0.84rem' : '0.8rem',
+            letterSpacing: '0.04em',
+            color: '#8B6425',
+          }}>
+            {item.time}
+          </span>
+        </div>
 
         <p style={{
           fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', 'Playfair Display', serif",
@@ -142,13 +152,7 @@ export default function CeremonySection() {
         {/* Timeline */}
         <div ref={lineRef} style={{ position: 'relative', textAlign: 'left' }}>
           {/* Animated gold line */}
-          <div style={{
-            position: 'absolute',
-            left: 'clamp(70px, 16%, 95px)',
-            top: 0, bottom: 0, width: 2,
-            background: '#E8DFD2',
-            marginLeft: 'calc(clamp(1.2rem, 3.5vw, 2.2rem) + 6px)',
-          } as React.CSSProperties}>
+          <div className="timeline-gold-line">
             <motion.div
               style={{
                 position: 'absolute', top: 0, left: 0, right: 0,

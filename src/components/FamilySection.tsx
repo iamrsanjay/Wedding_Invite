@@ -79,6 +79,29 @@ function FamilyPanel({ title, data, accentColor, isTamil }: FamilyPanelProps) {
       <div style={{ width: 1, height: 16, background: '#E8DFD2', margin: '0 auto' }} />
       <FamilyMember name={data.mother.name} relation={data.mother.relation} isTamil={isTamil} />
 
+      {/* Grandparents */}
+      {data.grandparents && data.grandparents.length > 0 && (
+        <>
+          <div style={{ margin: '1.2rem 0', opacity: 0.4 }}>
+            <GoldDivider />
+          </div>
+          <p style={{
+            fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
+            fontSize: isTamil ? '0.74rem' : '0.58rem',
+            letterSpacing: isTamil ? '0.04em' : '0.2em',
+            textTransform: isTamil ? 'none' : 'uppercase',
+            color: '#8A7660',
+            margin: '0 0 0.75rem',
+            fontWeight: 600,
+          }}>
+            {isTamil ? 'தாத்தா & பாட்டி' : 'Grandparents'}
+          </p>
+          {data.grandparents.map((gp, i) => (
+            <FamilyMember key={i} name={gp.name} relation={gp.relation} isTamil={isTamil} />
+          ))}
+        </>
+      )}
+
       {/* Brother */}
       {data.brother && data.brother.length > 0 && (
         <>
@@ -121,29 +144,6 @@ function FamilyPanel({ title, data, accentColor, isTamil }: FamilyPanelProps) {
           </p>
           {data.sisters.map((s, i) => (
             <FamilyMember key={i} name={s.name} isTamil={isTamil} />
-          ))}
-        </>
-      )}
-
-      {/* Grandparents */}
-      {data.grandparents && data.grandparents.length > 0 && (
-        <>
-          <div style={{ margin: '1.2rem 0', opacity: 0.4 }}>
-            <GoldDivider />
-          </div>
-          <p style={{
-            fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
-            fontSize: isTamil ? '0.74rem' : '0.58rem',
-            letterSpacing: isTamil ? '0.04em' : '0.2em',
-            textTransform: isTamil ? 'none' : 'uppercase',
-            color: '#8A7660',
-            margin: '0 0 0.75rem',
-            fontWeight: 600,
-          }}>
-            {isTamil ? 'தாத்தா & பாட்டி' : 'Grandparents'}
-          </p>
-          {data.grandparents.map((gp, i) => (
-            <FamilyMember key={i} name={gp.name} relation={gp.relation} isTamil={isTamil} />
           ))}
         </>
       )}

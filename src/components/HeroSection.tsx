@@ -105,7 +105,7 @@ function AnimatedRings() {
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const { language, isTamil } = useLanguage();
+  const { isTamil } = useLanguage();
 
   const rawBgY = useTransform(scrollYProgress, [0, 1], [0, 90]);
   const rawTextY = useTransform(scrollYProgress, [0, 1], [0, 45]);
@@ -238,40 +238,6 @@ export default function HeroSection() {
           maxWidth: 920,
         }}
       >
-        {/* Lord Ganesha Invocation */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.6rem',
-            padding: '0.45rem 1.4rem',
-            borderRadius: 9999,
-            background: 'rgba(20, 10, 6, 0.65)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(245, 208, 97, 0.45)',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
-            marginBottom: '1rem',
-          }}
-        >
-          <span style={{ color: '#F5D061', fontSize: '0.9rem' }}>🪔</span>
-          <span
-            style={{
-              fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Cinzel', serif",
-              fontSize: isTamil ? '0.88rem' : '0.74rem',
-              letterSpacing: isTamil ? '0.04em' : '0.22em',
-              textTransform: isTamil ? 'none' : 'uppercase',
-              color: '#F5D061',
-              fontWeight: 600,
-              textShadow: '0 2px 8px rgba(0,0,0,0.8)',
-            }}
-          >
-            {invitation.texts[language].divineHeader}
-          </span>
-          <span style={{ color: '#F5D061', fontSize: '0.9rem' }}>🪔</span>
-        </motion.div>
 
         {/* Ceremony Subtitle */}
         <motion.p
