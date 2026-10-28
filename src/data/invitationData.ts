@@ -32,10 +32,10 @@ export const invitation = {
   event: {
     type: {
       en: "Engagement Ceremony",
-      ta: "நிச்சயதார்த்த சுபமுகூர்த்த வைபவம்",
+      ta: "நிச்சயதார்த்தம்",
     },
     nameTamilStyle: {
-      en: "Nichayathartham",
+      en: "Engagement Ceremony",
       ta: "நிச்சயதார்த்தம்",
     },
     date: {
@@ -263,7 +263,7 @@ export const invitation = {
       },
       {
         time: "12:00 PM",
-        title: "Auspicious Feast (Virundhu)",
+        title: "Virundhu",
         description: "Conclusion of sacred rites followed by a joyous celebration, photography, and traditional festive lunch.",
         icon: "✨",
       },
@@ -283,7 +283,7 @@ export const invitation = {
       },
       {
         time: "மதியம் 12:00",
-        title: "அறுசுவை விருந்து & நல்வாழ்த்து",
+        title: "விருந்து",
         description: "சடங்குகள் இனிதே நிறைவடைந்து, சுற்றமும் நட்பும் சூழ அறுசுவை பாரம்பரிய மதிய உணவு உபசரிப்பு.",
         icon: "✨",
       },
@@ -336,4 +336,4 @@ Your esteemed presence, heartfelt prayers and affectionate blessings will make t
 };
 
 // Target date for countdown
-export const weddingDate = new Date("2026-11-29T10:30:00+05:30");
+export const engagementDate = new Date("2026-11-29T10:30:00+05:30");

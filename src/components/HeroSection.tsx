@@ -232,10 +232,14 @@ export default function HeroSection() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          justifyContent: 'flex-end',
           position: 'relative',
           zIndex: 4,
           width: '100%',
           maxWidth: 920,
+          minHeight: '70vh',
+          paddingTop: 'clamp(5rem, 14vh, 8rem)',
+          paddingBottom: '1.5rem',
         }}
       >
 
@@ -249,7 +253,7 @@ export default function HeroSection() {
             fontSize: isTamil ? 'clamp(1.15rem, 3.2vw, 1.45rem)' : 'clamp(0.78rem, 2.2vw, 1rem)',
             color: '#FFE599',
             textTransform: isTamil ? 'none' : 'uppercase',
-            margin: '0.2rem 0 0.8rem',
+            margin: '0 0 0.9rem',
             fontWeight: 700,
             textShadow: '0 2px 14px rgba(0,0,0,0.9), 0 0 10px rgba(245,208,97,0.5)',
           }}
@@ -261,27 +265,30 @@ export default function HeroSection() {
         <div
           style={{
             maxWidth: '100%',
-            overflow: 'hidden',
-            padding: '0.1rem 0.5rem',
+            overflow: 'visible',
+            padding: 0,
             textAlign: 'center',
             marginBottom: '0.2rem',
+            background: 'transparent',
+            border: 'none',
+            boxShadow: 'none',
           }}
         >
           <TextReveal
             text={brideDisplay}
             style={{
               fontFamily: isTamil ? "'Noto Serif Tamil', 'Mukta Malar', serif" : "'Cinzel', 'Playfair Display', serif",
-              fontSize: isTamil ? 'clamp(1.7rem, 6vw, 3.2rem)' : 'clamp(1.6rem, 5.8vw, 3.3rem)',
+              fontSize: isTamil ? 'clamp(1.7rem, 6vw, 3.2rem)' : 'clamp(1.5rem, 5.2vw, 2.9rem)',
               fontWeight: 700,
               color: '#FFFDF8',
-              letterSpacing: isTamil ? '0.03em' : '0.06em',
+              letterSpacing: isTamil ? '0.03em' : '0.05em',
               lineHeight: 1.15,
               whiteSpace: 'nowrap',
               textShadow: '0 3px 20px rgba(0,0,0,0.95), 0 0 18px rgba(212,175,55,0.7), 0 1px 3px rgba(0,0,0,0.9)',
               textAlign: 'center',
             }}
             delay={0.5}
-            stagger={0.06}
+            stagger={0.05}
           />
         </div>
 
@@ -311,27 +318,30 @@ export default function HeroSection() {
         <div
           style={{
             maxWidth: '100%',
-            overflow: 'hidden',
-            padding: '0.1rem 0.5rem',
+            overflow: 'visible',
+            padding: 0,
             textAlign: 'center',
             marginBottom: '0.2rem',
+            background: 'transparent',
+            border: 'none',
+            boxShadow: 'none',
           }}
         >
           <TextReveal
             text={groomDisplay}
             style={{
               fontFamily: isTamil ? "'Noto Serif Tamil', 'Mukta Malar', serif" : "'Cinzel', 'Playfair Display', serif",
-              fontSize: isTamil ? 'clamp(1.7rem, 6vw, 3.2rem)' : 'clamp(1.6rem, 5.8vw, 3.3rem)',
+              fontSize: isTamil ? 'clamp(1.7rem, 6vw, 3.2rem)' : 'clamp(1.5rem, 5.2vw, 2.9rem)',
               fontWeight: 700,
               color: '#FFFDF8',
-              letterSpacing: isTamil ? '0.03em' : '0.06em',
+              letterSpacing: isTamil ? '0.03em' : '0.05em',
               lineHeight: 1.15,
               whiteSpace: 'nowrap',
               textShadow: '0 3px 20px rgba(0,0,0,0.95), 0 0 18px rgba(212,175,55,0.7), 0 1px 3px rgba(0,0,0,0.9)',
               textAlign: 'center',
             }}
             delay={1.2}
-            stagger={0.06}
+            stagger={0.05}
           />
         </div>
 

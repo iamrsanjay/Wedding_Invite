@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import FadeUp from './FadeUp';
 import GoldDivider from './GoldDivider';
-import { weddingDate, invitation } from '../data/invitationData';
+import { engagementDate, invitation } from '../data/invitationData';
 import { useLanguage } from '../context/LanguageContext';
 
 interface TimeLeft { days: number; hours: number; minutes: number; seconds: number; }
@@ -10,7 +10,7 @@ interface TimeLeft { days: number; hours: number; minutes: number; seconds: numb
 function pad(n: number) { return String(n).padStart(2, '0'); }
 
 function getTimeLeft(): TimeLeft {
-  const diff = Math.max(0, weddingDate.getTime() - Date.now());
+  const diff = Math.max(0, engagementDate.getTime() - Date.now());
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
@@ -139,7 +139,7 @@ function SepDot() {
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft());
   const [prev, setPrev] = useState<TimeLeft>(getTimeLeft());
-  const isOver = weddingDate.getTime() <= Date.now();
+  const isOver = engagementDate.getTime() <= Date.now();
   const { language, isTamil } = useLanguage();
 
   useEffect(() => {

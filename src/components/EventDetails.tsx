@@ -175,7 +175,7 @@ export default function EventDetails() {
               fontWeight: 600,
             }}
           >
-            {isTamil ? 'சுப முகூர்த்த வைபவம்' : 'Auspicious Occasion'}
+            {''}
           </p>
           <h2
             style={{
@@ -230,7 +230,7 @@ export default function EventDetails() {
             label={isTamil ? "சுப முகூர்த்த நேரம்" : "Auspicious Muhurtham"}
             value={invitation.event.timeRange[language]}
             sub={isTamil ? "காலை முகூர்த்த வேளை" : "Morning Muhurtham"}
-            extra={isTamil ? "தொடர்ந்து அறுசுவை விருந்து" : "Followed by Feast"}
+            extra={''}
             index={1}
             isTamil={isTamil}
           />

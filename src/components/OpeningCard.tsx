@@ -416,7 +416,7 @@ export default function OpeningCard({ onOpen }: Props) {
 
   const triggerOpening = () => {
     if (phase !== 'idle') return;
-    window.dispatchEvent(new CustomEvent('wedding:play-music'));
+    window.dispatchEvent(new CustomEvent('engagement:play-music'));
     setPhase('breaking');
 
     setTimeout(() => {
@@ -626,7 +626,8 @@ export default function OpeningCard({ onOpen }: Props) {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        objectPosition: 'center 14%',
+                        objectPosition: 'center 18%',
+                        transform: 'scale(1.06)',
                         display: 'block',
                         filter: 'contrast(1.04) saturate(1.06)',
                         imageRendering: 'auto',
@@ -634,28 +635,6 @@ export default function OpeningCard({ onOpen }: Props) {
                       }}
                     />
 
-                    {/* Subtle Tap to Zoom pill */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        bottom: 12,
-                        right: 12,
-                        background: 'rgba(26, 15, 10, 0.75)',
-                        backdropFilter: 'blur(8px)',
-                        color: '#FFF2BD',
-                        border: '1px solid #D4AF37',
-                        borderRadius: 9999,
-                        padding: '4px 10px',
-                        fontSize: '0.62rem',
-                        fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 4,
-                      }}
-                    >
-                      <span>🔍</span>
-                      <span>{isTamil ? 'பெரிதாக்குக' : 'Tap to Zoom'}</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -961,24 +940,6 @@ export default function OpeningCard({ onOpen }: Props) {
                     }}
                   />
 
-                  {/* Tap to Zoom indicator */}
-                  <div
-                    style={{
-                      position: 'absolute',
-                      bottom: 8,
-                      right: 8,
-                      background: 'rgba(26, 15, 10, 0.75)',
-                      backdropFilter: 'blur(6px)',
-                      color: '#FFF2BD',
-                      border: '1px solid #D4AF37',
-                      borderRadius: 9999,
-                      padding: '3px 8px',
-                      fontSize: '0.58rem',
-                      fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
-                    }}
-                  >
-                    🔍 {isTamil ? 'பெரிதாக்குக' : 'Zoom'}
-                  </div>
                 </div>
               </div>
             </div>

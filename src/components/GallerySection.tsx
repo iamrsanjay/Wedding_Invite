@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import FadeUp from './FadeUp';
 import GoldDivider from './GoldDivider';
 import coupleImg from '../assets/couple.png';
-import ringsImg from '../assets/gallery_rings.jpg';
-import lampImg from '../assets/gallery_lamp.jpg';
+import ringsImg from '../assets/Ring.jpeg';
+import lampImg from '../assets/Bride_Saree.png';
 import { useLanguage } from '../context/LanguageContext';
 
 interface LocalizedText {
@@ -56,16 +56,16 @@ const galleryItems: GalleryItemData[] = [
   {
     image: lampImg,
     title: {
-      en: 'Auspicious Kuthu Vilakku',
-      ta: 'மங்கள குத்துவிளக்கு',
+      en: 'Reception Saree',
+      ta: 'ரிசெப்ஷன் சாடி',
     },
     subtitle: {
-      en: 'Divine Brass Lamp Illuminating Our Journey with Grace',
-      ta: 'தெய்வீக ஒளி பரப்பும் பாரம்பரிய மங்கள திருவிளக்கு',
+      en: 'Elegant bride saree styled for the reception with grace and tradition',
+      ta: 'மணமகள் ரிசெப்ஷன் சரியை அழகாக அலங்கரித்திருக்கும் பாரம்பரிய ஸ்டைல்',
     },
     tag: {
-      en: 'Temple Radiance',
-      ta: 'மங்கள ஒளி',
+      en: 'Bride Saree',
+      ta: 'மணமகள் சரி',
     },
     accentColor: '#B8860B',
   },

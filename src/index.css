@@ -26,6 +26,13 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: pan-y;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -34,6 +41,79 @@ body {
   color: var(--text);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  cursor: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+* {
+  cursor: auto;
+}
+
+.mobile-hr-heart {
+  display: none !important;
+}
+
+@media (max-width: 820px) {
+  body {
+    cursor: auto;
+  }
+
+  .mobile-hr-heart {
+    position: fixed;
+    left: -30vw;
+    top: 42%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0;
+    animation: mobileHeartFloat 8s ease-in-out infinite;
+  }
+
+  .mobile-hr-heart__svg {
+    width: 102px;
+    height: 92px;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(122, 32, 40, 0.08));
+    transform: rotate(-8deg);
+    opacity: 0.9;
+  }
+
+  .mobile-hr-heart__shape {
+    fill: #c9111a;
+    stroke: none;
+    stroke-width: 0;
+    opacity: 0.96;
+  }
+
+  .mobile-hr-heart__text {
+    fill: rgba(255, 255, 255, 0.98);
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+}
+
+@keyframes mobileHeartFloat {
+  0% {
+    transform: translate3d(-12vw, 0, 0) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(42vw, -12px, 0) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(88vw, 10px, 0) scale(0.82);
+    opacity: 0;
+  }
 }
 
 /* ── Typography ────────────────────────────────────────── */

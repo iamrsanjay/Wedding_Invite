@@ -18,7 +18,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     try {
-      const saved = localStorage.getItem('wedding_invitation_lang');
+      const saved = localStorage.getItem('engagement_invitation_lang');
       return saved === 'ta' ? 'ta' : 'en';
     } catch {
       return 'en';
@@ -28,7 +28,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     try {
-      localStorage.setItem('wedding_invitation_lang', lang);
+      localStorage.setItem('engagement_invitation_lang', lang);
     } catch {}
   };
 

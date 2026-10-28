@@ -8,8 +8,8 @@ export default function MusicToggle() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Sliced hook starts directly at the famous "Yaache Yaache" line
-    const audio = new Audio('/yaache_hook.mp3');
+    // Use the actual project music track from the Music folder
+    const audio = new Audio('/neethane.mp3.mpeg');
     audio.loop = true;
     audio.preload = 'auto';
     audioRef.current = audio;
@@ -28,10 +28,10 @@ export default function MusicToggle() {
         });
     };
 
-    window.addEventListener('wedding:play-music', handlePlayRequest);
+    window.addEventListener('engagement:play-music', handlePlayRequest);
 
     return () => {
-      window.removeEventListener('wedding:play-music', handlePlayRequest);
+      window.removeEventListener('engagement:play-music', handlePlayRequest);
       if (audioRef.current) {
         audioRef.current.pause();
       }
@@ -84,27 +84,15 @@ export default function MusicToggle() {
                 background: 'linear-gradient(135deg, #FAF7F0 0%, #F5EFE3 100%)',
                 border: '1.2px solid #D8C28E',
                 borderRadius: 9999,
-                padding: '0.4rem 1rem',
+                padding: '0.4rem 0.75rem',
                 boxShadow: '0 4px 16px rgba(122, 32, 40, 0.15)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.45rem',
+                justifyContent: 'center',
                 pointerEvents: 'none',
               }}
             >
               <span style={{ fontSize: '0.85rem' }}>🎵</span>
-              <span
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.68rem',
-                  fontWeight: 600,
-                  color: '#7A1C24',
-                  letterSpacing: '0.04em',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                Playing Auspicious Music
-              </span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -145,8 +133,8 @@ export default function MusicToggle() {
             outline: 'none',
             position: 'relative',
           }}
-          aria-label={isPlaying ? 'Pause Yaache Yaache' : 'Play Yaache Yaache'}
-          title={isPlaying ? 'Pause Yaache Yaache Karaoke' : 'Play Yaache Yaache Karaoke'}
+          aria-label={isPlaying ? 'Pause Neethaane' : 'Play Neethaane'}
+          title={isPlaying ? 'Pause Neethaane Instrumental' : 'Play Neethaane Instrumental'}
         >
           {isPlaying ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
