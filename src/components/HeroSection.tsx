@@ -1,6 +1,5 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import html2canvas from 'html2canvas';
 import { invitation } from '../data/invitationData';
 import GoldDivider from './GoldDivider';
 import TextReveal from './TextReveal';
@@ -105,13 +104,29 @@ function AnimatedRings() {
 
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 900 : false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const { isTamil } = useLanguage();
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 900px)');
+
+    const updateDesktopState = () => setIsDesktop(mediaQuery.matches);
+    updateDesktopState();
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateDesktopState);
+      return () => mediaQuery.removeEventListener('change', updateDesktopState);
+    }
+
+    mediaQuery.addListener(updateDesktopState);
+    return () => mediaQuery.removeListener(updateDesktopState);
+  }, []);
 
   const rawBgY = useTransform(scrollYProgress, [0, 1], [0, 90]);
   const rawTextY = useTransform(scrollYProgress, [0, 1], [0, 45]);
   const rawOp = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
-  const rawScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.96]);
+  const rawScale = useTransform(scrollYProgress, [0, 0.5], [1, 1]);
 
   const bgY = useSpring(rawBgY, { stiffness: 80, damping: 25 });
   const textY = useSpring(rawTextY, { stiffness: 80, damping: 25 });
@@ -121,22 +136,6 @@ export default function HeroSection() {
   const brideDisplay = isTamil ? invitation.bride.name.ta : invitation.bride.fullDisplay.en;
   const groomDisplay = isTamil ? invitation.groom.name.ta : invitation.groom.fullDisplay.en;
   const ceremonyTitle = isTamil ? invitation.event.type.ta : invitation.event.type.en;
-
-  const handleDownloadImage = async () => {
-    if (!ref.current) return;
-
-    const canvas = await html2canvas(ref.current, {
-      backgroundColor: '#120A07',
-      scale: 2,
-      useCORS: true,
-      allowTaint: true,
-    });
-
-    const link = document.createElement('a');
-    link.download = 'wedding-invitation-hero.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  };
 
   return (
     <section
@@ -163,10 +162,10 @@ export default function HeroSection() {
           inset: 0,
           backgroundImage: `url(${coupleImg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 16%',
+          backgroundPosition: isDesktop ? 'center 26%' : 'center 16%',
           backgroundRepeat: 'no-repeat',
           y: bgY,
-          scale: 1.04,
+          scale: isDesktop ? 1.1 : 1.04,
           zIndex: 1,
           filter: 'contrast(1.05) saturate(1.08) brightness(0.96)',
         }}
@@ -240,30 +239,6 @@ export default function HeroSection() {
         <motion.circle cx="190" cy="5" r="2.5" fill="#FFE599" />
       </motion.svg>
 
-      <button
-        type="button"
-        onClick={handleDownloadImage}
-        style={{
-          position: 'absolute',
-          top: '1rem',
-          right: '1rem',
-          zIndex: 10,
-          border: '1px solid rgba(245,208,97,0.9)',
-          background: 'rgba(34, 19, 10, 0.8)',
-          color: '#FDECC7',
-          borderRadius: 999,
-          padding: '0.55rem 0.9rem',
-          fontSize: '0.7rem',
-          fontWeight: 700,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          cursor: 'pointer',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-        }}
-      >
-        Download Image
-      </button>
-
       {/* ── Main Content with Royal Backdrop ── */}
       <motion.div
         style={{
@@ -277,10 +252,10 @@ export default function HeroSection() {
           position: 'relative',
           zIndex: 4,
           width: '100%',
-          maxWidth: 920,
+          maxWidth: isDesktop ? 780 : 920,
           minHeight: '70vh',
-          paddingTop: 'clamp(5rem, 14vh, 8rem)',
-          paddingBottom: '1.5rem',
+          paddingTop: isDesktop ? 'clamp(8rem, 18vh, 10rem)' : 'clamp(5rem, 14vh, 8rem)',
+          paddingBottom: isDesktop ? '2rem' : '1.5rem',
         }}
       >
 
@@ -498,7 +473,7 @@ export default function HeroSection() {
           transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
           style={{
             fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
-            fontSize: isTamil ? '0.72rem' : '0.54rem',
+            fontSize: isTamil ? '1.08rem' : '0.82rem',
             letterSpacing: '0.22em',
             textTransform: isTamil ? 'none' : 'uppercase',
             color: '#ECC875',
