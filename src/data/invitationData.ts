@@ -1,5 +1,5 @@
 // ============================================================
-//  INVITATION DATA — Central Source of Truth for Harshavardhini & Rajagopal
+//  INVITATION DATA — Central Source of Truth for Harsha Vardhini & Rajagopal
 //  Bilingual: English & Tamil (தமிழ்)
 // ============================================================
 
@@ -73,22 +73,22 @@ export const invitation = {
       ta: "செல்வி.",
     },
     name: {
-      en: "E. Harshavardhini",
-      ta: "E. ஹர்ஷவர்தினி",
+      en: "E. Harsha Vardhini",
+      ta: "E. ஹர்ஷ வர்த்தினி",
     },
     alias: {
-      en: "Renukadevi",
-      ta: "ரேணுகாதேவி",
+      en: "Renuga Devi",
+      ta: "ரேணுகா தேவி",
     },
     qualification: "M.Com.",
     shortName: {
-      en: "Harshavardhini",
-      ta: "ஹர்ஷவர்தினி",
+      en: "Harsha Vardhini",
+      ta: "ஹர்ஷ வர்த்தினி",
     },
     initial: "E.",
     fullDisplay: {
-      en: "E. HARSHAVARDHINI",
-      ta: "E. ஹர்ஷவர்தினி",
+      en: "E. HARSHA VARDHINI",
+      ta: "E. ஹர்ஷ வர்த்தினி",
     },
     title: {
       en: "Bride",
@@ -316,7 +316,7 @@ Your esteemed presence, heartfelt prayers and affectionate blessings will make t
       divineHeader: "ஓம் ஸ்ரீ விநாயகர் துணை",
       openingBlessing: "இறைவனின் திருவருளாலும், குலதெய்வம் மற்றும் பெரியோர்களின் நல்லாசியோடும்...",
       invitationLead: "எங்கள் இல்லத்து மணமக்களின் நிச்சயதார்த்த சுபமுகூர்த்த வைபவத்திற்கு தாங்கள் தங்கள் குடும்ப சகிதமாக வருகை தந்து சிறப்பிக்க அன்புடன் அழைக்கின்றோம்",
-      invitationBody: `எங்கள் இல்லத்து செல்வி E. ஹர்ஷவர்தினி மற்றும் செல்வன் C. ராஜகோபால் ஆகியோரின் நிச்சயதார்த்த சுபமுகூர்த்த வைபவத்திற்கு தாங்களும் தங்கள் குடும்பத்தாரும் வருகை தந்து, மணமக்களை வாழ்த்தி அருளுமாறு அன்புடன் அழைக்கின்றோம்.
+      invitationBody: `எங்கள் இல்லத்து செல்வி E. ஹர்ஷ வர்த்தினி மற்றும் செல்வன் C. ராஜகோபால் ஆகியோரின் நிச்சயதார்த்த சுபமுகூர்த்த வைபவத்திற்கு தாங்களும் தங்கள் குடும்பத்தாரும் வருகை தந்து, மணமக்களை வாழ்த்தி அருளுமாறு அன்புடன் அழைக்கின்றோம்.
 
 தங்களின் பொன்னான வருகையும், உளமார்ந்த நல்வாழ்த்துகளும் இந்நிகழ்வை மேலும் மங்களகரமானதாக மாற்றும்.`,
       closingBlessing: "தங்களின் வருகையே எங்கள் குடும்பத்திற்கு பெருமை!",

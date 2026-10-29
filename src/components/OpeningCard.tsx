@@ -370,7 +370,7 @@ function PhotoLightbox({ onClose, isTamil }: { onClose: () => void; isTamil: boo
 
         <img
           src={coupleImg}
-          alt="E. Harshavardhini & C. Rajagopal"
+          alt="E. Harsha Vardhini & C. Rajagopal"
           style={{
             width: '100%',
             height: 'auto',
@@ -391,7 +391,7 @@ function PhotoLightbox({ onClose, isTamil }: { onClose: () => void; isTamil: boo
             letterSpacing: '0.08em',
           }}
         >
-          {isTamil ? 'ஈ. ஹர்ஷவர்தினி & சி. ராஜகோபால்' : 'E. Harshavardhini & C. Rajagopal'}
+          {isTamil ? 'ஈ. ஹர்ஷ வர்த்தினி & சி. ராஜகோபால்' : 'E. Harsha Vardhini & C. Rajagopal'}
         </p>
       </motion.div>
     </motion.div>
@@ -621,7 +621,7 @@ export default function OpeningCard({ onOpen }: Props) {
                   >
                     <img
                       src={coupleImg}
-                      alt="E. Harshavardhini & C. Rajagopal"
+                      alt="E. Harsha Vardhini & C. Rajagopal"
                       style={{
                         width: '100%',
                         height: '100%',
@@ -928,7 +928,7 @@ export default function OpeningCard({ onOpen }: Props) {
                 >
                   <img
                     src={coupleImg}
-                    alt="E. Harshavardhini & C. Rajagopal"
+                    alt="E. Harsha Vardhini & C. Rajagopal"
                     style={{
                       width: '100%',
                       height: '100%',

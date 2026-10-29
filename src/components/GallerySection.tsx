@@ -24,8 +24,8 @@ const galleryItems: GalleryItemData[] = [
   {
     image: coupleImg,
     title: {
-      en: 'Harshavardhini & Rajagopal',
-      ta: 'ஹர்ஷவர்தினி & ராஜகோபால்',
+      en: 'Harsha Vardhini & Rajagopal',
+      ta: 'ஹர்ஷ வர்த்தினி & ராஜகோபால்',
     },
     subtitle: {
       en: 'Nichayathartham • Two Hearts, One Auspicious Beginning',
@@ -40,32 +40,32 @@ const galleryItems: GalleryItemData[] = [
   {
     image: ringsImg,
     title: {
-      en: 'The Sacred Rings',
-      ta: 'திருமண மோதிரங்கள்',
+      en: 'Engagement Ring',
+      ta: 'நிச்சயதார்த்த மோதிரம்',
     },
     subtitle: {
       en: 'Sparkling Solitaire Diamond & Gold Rings of Eternal Devotion',
       ta: 'அன்பின் அடையாளமாய் மிளிரும் நிச்சயதார்த்த மோதிரங்கள்',
     },
     tag: {
-      en: 'Sacred Vows',
-      ta: 'நிச்சயதார்த்தம்',
+      en: 'Engagement Ring',
+      ta: 'நிச்சயதார்த்த மோதிரம்',
     },
     accentColor: '#C59B27',
   },
   {
     image: lampImg,
     title: {
-      en: 'Reception Saree',
-      ta: 'ரிசெப்ஷன் சாடி',
+      en: 'Engagement Saree',
+      ta: 'நிச்சயதார்த்த புடவை',
     },
     subtitle: {
-      en: 'Elegant bride saree styled for the reception with grace and tradition',
-      ta: 'மணமகள் ரிசெப்ஷன் சரியை அழகாக அலங்கரித்திருக்கும் பாரம்பரிய ஸ்டைல்',
+      en: 'Elegant bride saree styled for the engagement with grace and tradition',
+      ta: 'மணமகள் நிச்சயதார்த்த புடவையை அழகாக அலங்கரித்திருக்கும் பாரம்பரிய ஸ்டைல்',
     },
     tag: {
-      en: 'Bride Saree',
-      ta: 'மணமகள் சரி',
+      en: 'Engagement Saree',
+      ta: 'நிச்சயதார்த்த புடவை',
     },
     accentColor: '#B8860B',
   },

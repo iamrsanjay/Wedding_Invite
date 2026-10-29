@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import html2canvas from 'html2canvas';
 import { invitation } from '../data/invitationData';
 import GoldDivider from './GoldDivider';
 import TextReveal from './TextReveal';
@@ -121,6 +122,22 @@ export default function HeroSection() {
   const groomDisplay = isTamil ? invitation.groom.name.ta : invitation.groom.fullDisplay.en;
   const ceremonyTitle = isTamil ? invitation.event.type.ta : invitation.event.type.en;
 
+  const handleDownloadImage = async () => {
+    if (!ref.current) return;
+
+    const canvas = await html2canvas(ref.current, {
+      backgroundColor: '#120A07',
+      scale: 2,
+      useCORS: true,
+      allowTaint: true,
+    });
+
+    const link = document.createElement('a');
+    link.download = 'wedding-invitation-hero.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  };
+
   return (
     <section
       id="hero"
@@ -222,6 +239,30 @@ export default function HeroSection() {
         <motion.circle cx="190" cy="18" r="5" fill="#F5D061" />
         <motion.circle cx="190" cy="5" r="2.5" fill="#FFE599" />
       </motion.svg>
+
+      <button
+        type="button"
+        onClick={handleDownloadImage}
+        style={{
+          position: 'absolute',
+          top: '1rem',
+          right: '1rem',
+          zIndex: 10,
+          border: '1px solid rgba(245,208,97,0.9)',
+          background: 'rgba(34, 19, 10, 0.8)',
+          color: '#FDECC7',
+          borderRadius: 999,
+          padding: '0.55rem 0.9rem',
+          fontSize: '0.7rem',
+          fontWeight: 700,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          cursor: 'pointer',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+        }}
+      >
+        Download Image
+      </button>
 
       {/* ── Main Content with Royal Backdrop ── */}
       <motion.div

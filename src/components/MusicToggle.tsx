@@ -14,6 +14,13 @@ export default function MusicToggle() {
     audio.preload = 'auto';
     audioRef.current = audio;
 
+    const pauseMusic = () => {
+      if (!audioRef.current) return;
+      audioRef.current.pause();
+      setIsPlaying(false);
+      setShowToast(false);
+    };
+
     const handlePlayRequest = () => {
       if (!audioRef.current) return;
       audioRef.current
@@ -28,10 +35,20 @@ export default function MusicToggle() {
         });
     };
 
+    const handlePageVisibility = () => {
+      if (document.hidden) {
+        pauseMusic();
+      }
+    };
+
     window.addEventListener('engagement:play-music', handlePlayRequest);
+    document.addEventListener('visibilitychange', handlePageVisibility);
+    window.addEventListener('blur', pauseMusic);
 
     return () => {
       window.removeEventListener('engagement:play-music', handlePlayRequest);
+      document.removeEventListener('visibilitychange', handlePageVisibility);
+      window.removeEventListener('blur', pauseMusic);
       if (audioRef.current) {
         audioRef.current.pause();
       }

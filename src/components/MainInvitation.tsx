@@ -35,7 +35,7 @@ function Footer() {
         margin: '0 0 0.4rem',
         fontWeight: 600,
       }}>
-        {isTamil ? 'ஈ. ஹர்ஷவர்தினி & சி. ராஜகோபால் · 29 நவம்பர் 2026' : 'E. HARSHAVARDHINI & C. RAJAGOPAL · 29 NOVEMBER 2026'}
+        {isTamil ? 'ஈ. ஹர்ஷ வர்த்தினி & சி. ராஜகோபால் · 29 நவம்பர் 2026' : 'E. HARSHA VARDHINI & C. RAJAGOPAL · 29 NOVEMBER 2026'}
       </p>
       <p style={{
         fontFamily: isTamil ? "'Noto Serif Tamil', serif" : "'Inter', sans-serif",
